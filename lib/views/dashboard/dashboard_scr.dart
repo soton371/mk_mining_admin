@@ -10,6 +10,7 @@ class DashboardScreen extends StatelessWidget {
         title: const Text("Users"),
       ),
       body: ListView.builder(
+        physics: const BouncingScrollPhysics(),
           itemCount: 10,
           padding: const EdgeInsets.symmetric(horizontal: 8),
           itemBuilder: (_, i) => Card(
