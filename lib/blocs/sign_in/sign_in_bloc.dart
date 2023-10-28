@@ -8,8 +8,7 @@ part 'sign_in_event.dart';
 part 'sign_in_state.dart';
 
 class SignInBloc extends Bloc<SignInEvent, SignInState> {
-  String 
-      token = '';
+  String token = '';
   SignInBloc() : super(SignInInitial()) {
     on<DoSignInEvent>((event, emit) async {
       debugPrint("call DoSignInEvent");
@@ -41,7 +40,6 @@ class SignInBloc extends Bloc<SignInEvent, SignInState> {
         emit(const SignInException(message: "Token is empty"));
         return;
       }
-
 
       emit(SignInSuccess());
     });

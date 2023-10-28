@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:mk_mining_admin/blocs/all_user/all_user_bloc.dart';
 import 'package:mk_mining_admin/blocs/sign_in/sign_in_bloc.dart';
 import 'package:mk_mining_admin/views/auth/login.dart';
 
@@ -29,6 +30,9 @@ class MyApp extends StatelessWidget {
       providers: [
         BlocProvider<SignInBloc>(
           create: (context) => SignInBloc(),
+        ),
+        BlocProvider<AllUserBloc>(
+          create: (context) => AllUserBloc(),
         ),
       ],
       child: MaterialApp(
