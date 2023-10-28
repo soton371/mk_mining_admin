@@ -53,15 +53,7 @@ class DashboardScreen extends StatelessWidget {
                     Switch(value: false, onChanged: (v) {}),
                   ],
                 ),
-                // child: ListTile(
-                // leading: const CircleAvatar(
-                //   child: Text("S"),
-                // ),
-                //   title: const Text("Soton Ahmed"),
-                //   subtitle: const Text("Email:tasmia437@gmail.com | Main: 500 | Mining: 01 | Team: 08"),
-                //   trailing: Switch(
-                //     value: false, onChanged: (v){}),
-                // ),
+                
               )),
     );
   }
