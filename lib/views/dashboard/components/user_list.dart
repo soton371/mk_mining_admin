@@ -20,6 +20,8 @@ class _UserListState extends State<UserList> {
         padding: const EdgeInsets.symmetric(horizontal: 8),
         itemBuilder: (_, i) {
           final data = widget.allUsers[i];
+          final balance = data.balance;
+
           return Card(
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +50,7 @@ class _UserListState extends State<UserList> {
                         ),
                         Text(data.email ?? 'Null'),
                         Text(
-                          "Main: 500 | Mining: 01 | Team: 08",
+                          "Main: ${balance == null? 0:balance.mainBalance} | Mining: ${balance == null? 0:balance.miningBalance} | Team: ${data.referUserCount}",
                           style: TextStyle(
                               fontSize: 12,
                               color: Theme.of(context)
@@ -72,7 +74,8 @@ class _UserListState extends State<UserList> {
                           debugPrint("data.isActive: ${data.isActive}");
 
                           setState(() {});
-                          activeDeactivateService(token: widget.token, id: data.id.toString());
+                          activeDeactivateService(
+                              token: widget.token, id: data.id.toString());
                         }),
               ],
             ),
